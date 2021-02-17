@@ -38,8 +38,9 @@ router
         }
     })
 
-    .post("movies", async (req, res) => {
-        const movie = req.body.movie;
+    .post("/movies", async (req, res) => {
+        const movie = req.body;
+        console.log(movie);
 
         try {
             const result = await createMovie(movie);
@@ -52,13 +53,13 @@ router
         }
     })
 
-    .put("movies/:id", async (req, res) => {
-        const movie = req.body.movie;
+    .put("/movies/:id", async (req, res) => {
+        const movie = req.body;
 
         try {
             const result = await updateMovie(movie);
 
-            //sendResponse(res, result)
+            sendResponse(res, result)
 
         } catch (error) {
             errorLogging("get movies", error);
@@ -66,13 +67,14 @@ router
         }
     })
 
-    .delete("movies", async (req, res) => {
+    .delete("/movies/:id", async (req, res) => {
         const id = req.params.id;
+        console.log(id);
 
         try {
             const result = await deleteMovie(id);
 
-           // sendResponse(res, result)
+           sendResponse(res, result)
 
         } catch (error) {
             errorLogging("get movies", error);
