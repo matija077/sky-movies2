@@ -18,7 +18,7 @@ const knex = require('./db/connection');
 //knex({user: 'table'})
 //knex.seed.make("movies_seed");
 try {
-  knex.seed.run();
+  //knex.seed.run();
 } catch(err) {
 
 }

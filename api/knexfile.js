@@ -13,16 +13,7 @@ module.exports = {
         seeds: {
             directory: './db/seeds'
         },
-        pool: { min: 0, max: 100,
-            afterCreate: (connection, done) => {
-                console.log(connection);
-                connection.query('*', function(err) {
-                    console.log(err);
-                })
-
-                done(null, connection);
-            }
-        },
+        pool: { min: 0, max: 100},
         acquireConnectionTimeout: 100000
     }
 };

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const loggingService = require("../services/logging.service");
+const { errorLogging } = require("../services/logging.service");
 const { returnCodes } = require("../config/utils");
 
 const {
@@ -18,22 +18,20 @@ router
         try {
             const result = await getMovies();
 
-            //sendResponse(res, result)
-
+            sendResponse(res, result)
         } catch (error) {
             errorLogging("get movies", error);
             res.status(returnCodes.error).send("something went wrong");
         }
     })
 
-    .get("movies/:id", async (req, res) => {
+    .get("/movies/:id", async (req, res) => {
         const id = req.params.id;
 
         try {
             const result = await getMovie(id);
 
-            //sendResponse(res, result)
-
+            sendResponse(res, result)
         } catch (error) {
             errorLogging("get movies", error);
             res.status(returnCodes.error).send("something went wrong");
