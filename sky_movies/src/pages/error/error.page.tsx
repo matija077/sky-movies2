@@ -5,12 +5,12 @@ type ErrorBoundaryPropsType = {
     children: ReactNode
 };
 type ErrorBoundaryStateType = {
-    error: Error,
+    error?: Error,
     hasError: boolean
 };
 
 class ErrorBoundary extends React.Component<ErrorBoundaryPropsType, ErrorBoundaryStateType> {
-    constructor(props) {
+    constructor(props: any) {
         super(props);
 
         this.state = {

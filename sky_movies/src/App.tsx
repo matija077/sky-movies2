@@ -7,6 +7,8 @@ import {
 
 import ErrorBoundary from './pages/error/error.page';
 
+import GlobalStyles from './utility/styles/global.styles';
+
 type AppPropsType = {
 
 };
@@ -15,6 +17,8 @@ function App(props: AppPropsType) {
 
   return(
     <ErrorBoundary>
+      <>
+      <GlobalStyles />
       <Router>
         <Switch>
 
@@ -23,7 +27,7 @@ function App(props: AppPropsType) {
           </Route>
         </Switch>
       </Router>
-
+    </>
     </ErrorBoundary>
   );
 }
