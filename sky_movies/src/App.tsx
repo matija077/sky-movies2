@@ -8,6 +8,9 @@ import {
 import ErrorBoundary from './pages/error/error.page';
 
 import GlobalStyles from './utility/styles/global.styles';
+import { ThemeProvider } from 'styled-components';
+
+import { theme } from "./utility/styles/theme.styles";
 
 type AppPropsType = {
 
@@ -19,14 +22,16 @@ function App(props: AppPropsType) {
     <ErrorBoundary>
       <>
       <GlobalStyles />
-      <Router>
-        <Switch>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <Switch>
 
-          <Route>
-            "Home page"
-          </Route>
-        </Switch>
-      </Router>
+            <Route>
+              "Home page"
+            </Route>
+          </Switch>
+        </Router>
+      </ThemeProvider>
     </>
     </ErrorBoundary>
   );
