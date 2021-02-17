@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
     }
     body {
 
-        font-family: Open-Sans, Helvetica, Sans-Serif;
+        font-family: Lato, Open-Sans, Helvetica, Sans-Serif;
     }
     h1, h2, h3, h4, h5 {
         line-height: 1.2;

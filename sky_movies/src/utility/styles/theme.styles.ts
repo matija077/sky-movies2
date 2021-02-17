@@ -9,7 +9,8 @@ const theme = {
         third: {
             main: "#0000191A"
         }
-    }
+    },
+    headerSize: "5vh"
 }
 
 export {
