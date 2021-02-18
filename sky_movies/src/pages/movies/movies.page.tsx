@@ -1,6 +1,8 @@
 import * as React from 'react';
 
 import FlexBox from '../../components/flex_box/flex_box.component';
+import Button from '../../components/button/button.component';
+import Typography from '../../components/typography/typography.component';
 
 import { MoviesStyles, MainGridStyles } from './movies.styles';
 
@@ -29,7 +31,11 @@ function Movies({ children }: MoviesPropsType) {
                     <span>First</span>
 
                 </FlexBox>
-                <span>adasdas</span>
+                <Button>
+                    <Typography type={"h6"} fontSize={2.4} color={"primary"}>
+                        + Add New
+                    </Typography>
+                </Button>
             </FlexBox>
             <FlexBox
                 padding={3}

@@ -18,7 +18,10 @@ function Menu(props: menuPropsType) {
             <Header>
                 <TwoPieceItem
                     icon="icon"
-                    text={<Typography type={"h6"} fontSize={3.3}>Sky movies</Typography>}
+                    text={<Typography
+                            type={"h6"}
+                            fontSize={3.3}
+                    >Sky movies</Typography>}
                 />
             </Header>
             <Navbar>
