@@ -8,7 +8,7 @@ const MoviesStyles = styled.main`
 
 const MainGridStyles = styled.article`
     display: grid;
-    grid-template-columns: repeat(fit-content, minmax(176px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
     grid-template-rows: auto;
 `;
 
