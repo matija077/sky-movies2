@@ -37,7 +37,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryPropsType, ErrorBoundar
         if (hasError) {
             return (
                 <Suspense
-                    fallback={<Spinner />}
+                    fallback={<Spinner positionFixed />}
                 >
                     <div>Error</div>
                 </Suspense>

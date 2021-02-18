@@ -9,7 +9,6 @@ const HeaderStyles = styled.header<HeaderStylesPropsType>`
     min-height: 80px;
     width: 100%;
     box-shadow: ${props => {
-        console.log(props.shadow);
         return props.shadow
             ? "0px 0.2rem 0.1rem #00000029"
             : undefined

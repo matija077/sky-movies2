@@ -7,7 +7,6 @@ type ButtonPropsType = {
 } & ButtonStylesPropsType
 
 function Button({ children, ...rest }: ButtonPropsType) {
-    console.log(children);
 
     return(
         <ButtonStyles value={"aaaa"} {...rest}>

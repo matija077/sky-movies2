@@ -8,7 +8,6 @@ type TypographyPropsType = {
 } & TypographyStylesPropsType
 
 function Typography({ children, type, ...rest }: TypographyPropsType) {
-    console.log(children);
     return(
         <TypographyStyles {...rest} as={type}>
             {children}

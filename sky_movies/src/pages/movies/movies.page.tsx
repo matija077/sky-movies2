@@ -3,6 +3,10 @@ import * as React from 'react';
 import FlexBox from '../../components/flex_box/flex_box.component';
 import Button from '../../components/button/button.component';
 import Typography from '../../components/typography/typography.component';
+import Spinner from '../../components/spinner/spinner.component';
+
+import { useFetch } from '../../utility/hooks/customHooks';
+import { movieType } from '../../utility/types/movies.types';
 
 import { MoviesStyles, MainGridStyles } from './movies.styles';
 
@@ -10,7 +14,12 @@ type MoviesPropsType = {
     children?: React.ReactNode
 }
 
+// this should be set in .env and checked for production environment
+const url = "http://localhost:3201/api/v1/movies";
+
 function Movies({ children }: MoviesPropsType) {
+    const [data, loading] = useFetch<Array<movieType>>(url);
+    console.log(loading);
 
     return(
         <MoviesStyles>
@@ -43,7 +52,12 @@ function Movies({ children }: MoviesPropsType) {
             >
                 <h5>All Movies</h5>
             </FlexBox>
-            <MainGridStyles></MainGridStyles>
+                {loading
+                    ? <Spinner positionFixed={false}></Spinner>
+                    : <MainGridStyles>
+
+                    </MainGridStyles>
+                }
         </MoviesStyles>
     );
 }

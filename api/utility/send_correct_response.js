@@ -8,6 +8,8 @@ function sendCorrectResponse(res, result) {
         return;
     }
 
+    console.log(result.data);
+
     res.json(result.data)
 }
 

@@ -1,12 +1,26 @@
 import React from 'react';
 
+import {
+    SpinnerStyles,
+    SpinnerStylesContainer,
+    SpinnerStylesOutsideContainer
+} from './spinner.styles';
+
 type SpinnerPropsType = {
+    positionFixed: boolean
 }
 
-function Spinner(props: SpinnerPropsType) {
+function Spinner({ positionFixed }: SpinnerPropsType) {
     return (
-        <div>Loading</div>
-    )
+    <SpinnerStylesOutsideContainer>
+        <SpinnerStylesContainer
+            positionFixed={positionFixed}
+        >
+            <SpinnerStyles>
+            </SpinnerStyles>
+        </SpinnerStylesContainer>
+    </SpinnerStylesOutsideContainer>
+    );
 }
 
 export default Spinner;
