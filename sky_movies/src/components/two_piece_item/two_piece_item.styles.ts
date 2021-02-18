@@ -5,7 +5,7 @@ const TwoPieceItemStyles = styled.section`
     width: 100%;
     min-width: 100%;
     overflow: hidden;
-    margin-bottom: ${props => `${props.theme.spacing}rem`};
+    margin-bottom: ${props => `${props.theme.spacing()}rem`};
 `;
 
 const FirstItem = styled.span`

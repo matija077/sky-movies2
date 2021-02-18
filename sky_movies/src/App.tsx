@@ -38,6 +38,7 @@ function App(props: AppPropsType) {
                   justifyContent={"space-between"}
                   alignItems={"center"}
                   wrap={"nowrap"}
+                  color={"secondary"}
                 >
                   <Search>fpsdfsdfadsf</Search>
                   <User>sdfaff</User>

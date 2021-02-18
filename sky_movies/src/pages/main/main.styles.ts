@@ -5,7 +5,7 @@ const MenuPage = styled.div`
     display: grid;
     grid-template-areas: 'menu mainPage';
     grid-template-columns: 1fr 5fr;
-    color: ${props => props.theme.colors.primary.main};
+    color: ${props => props.theme.fonts.colors.primary.main};
     letter-spacing: 0px;
 `;
 
