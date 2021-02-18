@@ -13,6 +13,7 @@ import Search from './components/search/search.component';
 import FlexBox from './components/flex_box/flex_box.component';
 
 import MainPage from './pages/main/main.page';
+import Movies from './pages/movies/movies.page';
 import Menu from './components/menu/menu.component';
 import Header from './components/header/header.component';
 
@@ -34,11 +35,10 @@ function App(props: AppPropsType) {
             <div>
               <Header shadow>
                 <FlexBox
-                  direction={"row"}
                   justifyContent={"space-between"}
                   alignItems={"center"}
-                  wrap={"nowrap"}
                   color={"secondary"}
+                  padding={3}
                 >
                   <Search>fpsdfsdfadsf</Search>
                   <User>sdfaff</User>
@@ -46,8 +46,8 @@ function App(props: AppPropsType) {
               </Header>
               <Router>
                 <Switch>
-                  <Route>
-                    "Home page"
+                  <Route path="/" exact>
+                    <Movies></Movies>
                   </Route>
                 </Switch>
               </Router>
