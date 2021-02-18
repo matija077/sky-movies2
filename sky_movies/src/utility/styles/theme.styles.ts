@@ -10,7 +10,8 @@ const theme = {
             main: "#0000191A"
         }
     },
-    headerSize: "5vh"
+    headerSize: "5vh",
+    spacing: 0.5,
 }
 
 export {

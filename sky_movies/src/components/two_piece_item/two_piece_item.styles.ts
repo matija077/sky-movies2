@@ -5,6 +5,7 @@ const TwoPieceItemStyles = styled.section`
     width: 100%;
     min-width: 100%;
     overflow: hidden;
+    margin-bottom: ${props => `${props.theme.spacing}rem`};
 `;
 
 const FirstItem = styled.span`
@@ -12,7 +13,6 @@ const FirstItem = styled.span`
 `;
 const SecondItem = styled.label`
     margin-left: 0.5rem;
-    margin-bottom: 0.5rem;
     opacity: 0.6;
     display: inline-block;
 
