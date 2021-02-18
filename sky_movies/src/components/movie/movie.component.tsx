@@ -1,10 +1,13 @@
 import * as React from 'react';
 
+import FlexBox from '../flex_box/flex_box.component';
+
 import {
     MovieComponentStyles,
 } from './movie.styles';
 
 import { movieType } from '../../utility/types/movies.types';
+
 
 type MoviePropsType = {
 
@@ -18,9 +21,16 @@ function MovieComponent({
 }: MoviePropsType) {
 
     return(
-        <MovieComponentStyles>
-            {genre}
-        </MovieComponentStyles>
+        <FlexBox
+            direction={"column"}
+            color={"primary"}
+            padding={0}
+            justifyContent={'space-between'}
+        >
+            <Image></Image>
+            <div>name</div>
+            <div>genre</div>
+        </FlexBox>
     );
 }
 
