@@ -29,7 +29,7 @@ function App(props: AppPropsType) {
         <MainPage>
           <Menu></Menu>
             <div>
-              <Header />
+              <Header shadow />
               <Router>
                 <Switch>
                   <Route>

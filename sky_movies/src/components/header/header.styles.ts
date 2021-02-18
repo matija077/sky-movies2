@@ -1,8 +1,18 @@
 import styled from 'styled-components';
 
-const HeaderStyles = styled.header`
+type HeaderStylesPropsType = {
+    shadow: boolean
+}
+
+const HeaderStyles = styled.header<HeaderStylesPropsType>`
     height: 5vh;
     width: 100%;
+    box-shadow: ${props => {
+        console.log(props.shadow);
+        return props.shadow
+            ? "0px 0.2rem 0.1rem #00000029"
+            : undefined
+    }};
 `;
 
 export {

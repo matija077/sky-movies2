@@ -4,12 +4,13 @@ import { HeaderStyles } from './header.styles';
 
 type headerPropsType = {
     children?: React.ReactNode;
+    shadow?: boolean
 }
 
-function Header({ children }: headerPropsType) {
+function Header({ children, shadow = false }: headerPropsType) {
 
     return(
-        <HeaderStyles>
+        <HeaderStyles shadow={shadow}>
             {children}
         </HeaderStyles>
     );
