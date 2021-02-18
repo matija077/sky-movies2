@@ -1,6 +1,9 @@
 import * as React from 'react';
 
 import FlexBox from '../flex_box/flex_box.component';
+import Image from '../image/image.component';
+
+import poster from '../../assets/Poster.jpg';
 
 import {
     MovieComponentStyles,
@@ -27,7 +30,7 @@ function MovieComponent({
             padding={0}
             justifyContent={'space-between'}
         >
-            <Image></Image>
+            <Image image1x={poster} alt={name}></Image>
             <div>name</div>
             <div>genre</div>
         </FlexBox>
