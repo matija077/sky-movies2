@@ -8,6 +8,9 @@ import {
 import ErrorBoundary from './pages/error/error.page';
 import GlobalStyles from './utility/styles/global.styles';
 import { ThemeProvider } from 'styled-components';
+import User from './components/user/user.component';
+import Search from './components/search/search.component';
+import FlexBox from './components/flex_box/flex_box.component';
 
 import MainPage from './pages/main/main.page';
 import Menu from './components/menu/menu.component';
@@ -29,7 +32,17 @@ function App(props: AppPropsType) {
         <MainPage>
           <Menu></Menu>
             <div>
-              <Header shadow />
+              <Header shadow>
+                <FlexBox
+                  direction={"row"}
+                  justifyContent={"space-between"}
+                  alignItems={"center"}
+                  wrap={"nowrap"}
+                >
+                  <Search>fpsdfsdfadsf</Search>
+                  <User>sdfaff</User>
+                </FlexBox>
+              </Header>
               <Router>
                 <Switch>
                   <Route>
