@@ -6,6 +6,7 @@ type HeaderStylesPropsType = {
 
 const HeaderStyles = styled.header<HeaderStylesPropsType>`
     height: 5vh;
+    min-height: 80px;
     width: 100%;
     box-shadow: ${props => {
         console.log(props.shadow);

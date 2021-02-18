@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        font-size: 62.5%;
     }
     *, *:before, *:after {
         box-sizing: inherit;
@@ -17,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: Lato, Open-Sans, Helvetica, Sans-Serif;
     }
     h1, h2, h3, h4, h5 {
+        font-weight: 100;
         line-height: 1.2;
     }
 `;

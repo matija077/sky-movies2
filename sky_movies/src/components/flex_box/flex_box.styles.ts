@@ -8,7 +8,7 @@ export type FlexBoxStylesPropsType = {
     color: "primary" | "secondary" | "third";
     display?: "inline-flex" | "flex";
     padding: number,
-    width?: number
+    maxWidth?: number
 }
 
 const FlexBoxStyles = styled.div<FlexBoxStylesPropsType>`
@@ -21,7 +21,7 @@ const FlexBoxStyles = styled.div<FlexBoxStylesPropsType>`
     width: 100%;
     color: ${props => props.theme.fonts.colors[props.color].main};
     padding: ${props => `${props.theme.spacing(props.padding)}rem`};
-    width: ${props => props.width ? `${props.width}%` : "unset"};
+    max-width: ${props => props.maxWidth ? `${props.maxWidth}%` : "unset"};
 `;
 
 export {

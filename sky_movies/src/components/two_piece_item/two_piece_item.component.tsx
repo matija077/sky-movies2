@@ -7,7 +7,7 @@ import {
 } from './two_piece_item.styles';
 
 type twoPieceItemPropsType = {
-    text: string,
+    text: React.ReactNode,
     icon: string
 }
 

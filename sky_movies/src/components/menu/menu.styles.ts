@@ -9,6 +9,7 @@ const Aside = styled.aside`
     margin: auto;
     width: 100%;
     height: 100%;
+    font-size: 2.2rem;
 `;
 
 export {

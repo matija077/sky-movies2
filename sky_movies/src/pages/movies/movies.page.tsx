@@ -22,7 +22,7 @@ function Movies({ children }: MoviesPropsType) {
                     color={"secondary"}
                     justifyContent={"space-between"}
                     display={"inline-flex"}
-                    width={75}
+                    maxWidth={75}
                 >
                     <span>First</span>
                     <span>First</span>
