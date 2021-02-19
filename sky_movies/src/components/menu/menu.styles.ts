@@ -10,6 +10,7 @@ const Aside = styled.aside`
     width: 100%;
     min-width: 312px;
     height: 100%;
+    min-height: 100vh;
     font-size: 2.2rem;
 `;
 

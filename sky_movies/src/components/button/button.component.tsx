@@ -9,7 +9,7 @@ type ButtonPropsType = {
 function Button({ children, ...rest }: ButtonPropsType) {
 
     return(
-        <ButtonStyles value={"aaaa"} {...rest}>
+        <ButtonStyles {...rest}>
             {children}
         </ButtonStyles>
     );

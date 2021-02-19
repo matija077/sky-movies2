@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,6 +24,12 @@ type AppPropsType = {
 };
 
 function App(props: AppPropsType) {
+  /*
+  * interpretation of the search -
+  * for each search it returns to the main page
+  * so the logic should be in the app component.
+  */
+  const [search, setSearch] = useState("Search")
 
   return(
     <ErrorBoundary>
@@ -40,8 +46,8 @@ function App(props: AppPropsType) {
                   color={"secondary"}
                   padding={3}
                 >
-                  <Search>fpsdfsdfadsf</Search>
-                  <User>sdfaff</User>
+                  <Search value={search}></Search>
+                  <User>User</User>
                 </FlexBox>
               </Header>
               <Router>

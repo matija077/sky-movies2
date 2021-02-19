@@ -36,7 +36,7 @@ function MovieComponent({
                 image1x={poster}
                 alt={name}
                 width={"176px"}
-                height={"235"}
+                height={"235px"}
             ></Image>
             <Typography
                 type={"h4"}
