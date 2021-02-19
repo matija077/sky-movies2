@@ -13,7 +13,7 @@ export type ImagePropsType = {
     alt?: string
 } & ImageContainerStylesPropsType
 
-function Image({alt, image2x, image1x, image3x, width, height}: ImagePropsType) {
+function Image({alt, image2x, image1x, image3x, ...rest}: ImagePropsType) {
     // probably faster without, but to many ifs.
     const srcSet = useMemo(() => {
         if (image2x || image3x) {
@@ -39,19 +39,9 @@ function Image({alt, image2x, image1x, image3x, width, height}: ImagePropsType) 
         return image1x;
     }, [image1x, image2x, image3x]);
 
-    const [state, setState] = useState("");
-    console.log("re rendered");
-    console.log(srcSet);
-
-    useEffect(() => {
-        setTimeout(() => {
-            setState("3");
-        }, 6000)
-    })
-
     return(
-        <ImageContainerStyles width={width} height={height}>
-            <ImageStyles alt={alt} srcSet={srcSet} src={image1x} />
+        <ImageContainerStyles {...rest}>
+            <ImageStyles alt={alt} srcSet={srcSet} src={image1x}  />
         </ImageContainerStyles>
     );
 }

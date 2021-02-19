@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
-const TwoPieceItemStyles = styled.section`
+export type TwoPieceItemStylesPropsType ={
+    padding?: number
+}
+
+const TwoPieceItemStyles = styled.section<TwoPieceItemStylesPropsType>`
     flex: 1 1 auto;
     width: 100%;
     min-width: 100%;
     overflow: hidden;
     margin-bottom: ${props => `${props.theme.spacing()}rem`};
+    padding: ${props => props.padding ? `${props.theme.spacing(props.padding)}rem` : undefined};
 `;
 
 const FirstItem = styled.span`

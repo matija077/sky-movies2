@@ -8,6 +8,7 @@ const Aside = styled.aside`
     flex-direction: column;
     margin: auto;
     width: 100%;
+    min-width: 312px;
     height: 100%;
     font-size: 2.2rem;
 `;

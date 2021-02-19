@@ -3,18 +3,19 @@ import * as React from 'react';
 import {
     TwoPieceItemStyles,
     FirstItem,
-    SecondItem
+    SecondItem,
+    TwoPieceItemStylesPropsType
 } from './two_piece_item.styles';
 
 type twoPieceItemPropsType = {
     text: React.ReactNode,
-    icon: string
-}
+    icon: React.ReactNode
+} & TwoPieceItemStylesPropsType;
 
-function TwoPieceItem({ icon, text }: twoPieceItemPropsType) {
+function TwoPieceItem({ icon, text, padding }: twoPieceItemPropsType) {
 
     return(
-        <TwoPieceItemStyles>
+        <TwoPieceItemStyles padding={padding}>
             <FirstItem>{icon}</FirstItem>
             <SecondItem>{text}</SecondItem>
         </TwoPieceItemStyles>
