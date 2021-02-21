@@ -15,6 +15,9 @@ type MoviesPropsType = {
     children?: React.ReactNode
 }
 
+const categories = ["All", "Drama", "Biography", "SF", "Drama", "Crime",
+    "Romance", "Action"];
+
 // this should be set in .env and checked for production environment
 const url = "http://localhost:3201/api/v1/movies";
 
@@ -32,13 +35,22 @@ function Movies({ children }: MoviesPropsType) {
                 <FlexBox
                     padding={0}
                     color={"secondary"}
-                    justifyContent={"space-between"}
+                    justifyContent={"start"}
                     display={"inline-flex"}
                     maxWidth={75}
+                    elementsDistance={5}
                 >
-                    <span>First</span>
-                    <span>First</span>
-                    <span>First</span>
+                    {
+                        categories.map((category, index) => {
+                            return (
+                                <Button key={index} backgroundColor={"primary"}>
+                                    <Typography type={"h6"}>
+                                        {category}
+                                    </Typography>
+                                </Button>
+                            );
+                        })
+                    }
 
                 </FlexBox>
                 <Button>

@@ -8,7 +8,8 @@ export type FlexBoxStylesPropsType = {
     color: "primary" | "secondary" | "third";
     display?: "inline-flex" | "flex";
     padding: number,
-    maxWidth?: number
+    maxWidth?: number,
+    elementsDistance?: number
 }
 
 const FlexBoxStyles = styled.div<FlexBoxStylesPropsType>`
@@ -22,6 +23,21 @@ const FlexBoxStyles = styled.div<FlexBoxStylesPropsType>`
     color: ${props => props.theme.fonts.colors[props.color].main};
     padding: ${props => `${props.theme.spacing(props.padding)}rem`};
     max-width: ${props => props.maxWidth ? `${props.maxWidth}%` : "unset"};
+
+    & > :not(:first-child){
+        margin-left: ${props => {
+            return props.elementsDistance
+                ? `${props.theme.spacing(props.elementsDistance/2)}rem`
+                : "inherit"
+        }}
+    }
+    & > :not(:last-child){
+        margin-right: ${props => {
+            return props.elementsDistance
+                ? `${props.theme.spacing(props.elementsDistance/2)}rem`
+                : "inherit"
+        }}
+    }
 `;
 
 export {
