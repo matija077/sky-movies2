@@ -17,6 +17,7 @@ import MainPage from './pages/main/main.page';
 import Movies from './pages/movies/movies.page';
 import Menu from './components/menu/menu.component';
 import Header from './components/header/header.component';
+import MoviePage from './pages/movie/movie.page';
 
 import { theme } from "./utility/styles/theme.styles";
 
@@ -56,7 +57,13 @@ function App(props: AppPropsType) {
                   <Route path="/" exact>
                     <Movies></Movies>
                   </Route>
-                  <Redirect to="/"></Redirect>
+                  <Route path="/movie/:id">
+                    <MoviePage></MoviePage>
+                  </Route>
+                  <Route>
+                    <Redirect to="/">
+                    </Redirect>
+                  </Route>
                 </Switch>
               </Router>
             </div>

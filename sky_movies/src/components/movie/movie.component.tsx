@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { Link, useRouteMatch } from 'react-router-dom';
+
 import FlexBox from '../flex_box/flex_box.component';
 import Image from '../image/image.component';
 import Typography from '../typography/typography.component';
@@ -15,15 +17,20 @@ import { movieType } from '../../utility/types/movies.types';
 
 type MoviePropsType = {
 
-} & Omit<movieType, "id">
+} & movieType;
 
 function MovieComponent({
     explicit,
     genre,
     name,
-    rating
+    rating,
+    id
 }: MoviePropsType) {
     console.log(poster);
+    const { path ,url } = useRouteMatch();
+    console.log(useRouteMatch());
+    console.log([path]);
+    console.log([url]);
 
     return(
         <FlexBox
@@ -32,12 +39,18 @@ function MovieComponent({
             padding={0}
             justifyContent={'space-between'}
         >
-            <Image
-                image1x={poster}
-                alt={name}
-                width={"176px"}
-                height={"235px"}
-            ></Image>
+            <Link
+                to={{
+                    pathname: `/movie/${id}`
+                }}
+            >
+                <Image
+                    image1x={poster}
+                    alt={name}
+                    width={"176px"}
+                    height={"235px"}
+                ></Image>
+            </Link>
             <Typography
                 type={"h4"}
                 color={"third"}

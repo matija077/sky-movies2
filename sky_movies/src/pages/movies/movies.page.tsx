@@ -11,7 +11,6 @@ import Button from '../../components/button/button.component';
 import Typography from '../../components/typography/typography.component';
 import Spinner from '../../components/spinner/spinner.component';
 import Movie from '../../components/movie/movie.component';
-import MoviePage from '../../pages/movie/movie.page';
 
 import { useFetch } from '../../utility/hooks/customHooks';
 import { movieType } from '../../utility/types/movies.types';
@@ -79,16 +78,14 @@ function Movies({ children }: MoviesPropsType) {
                     ? <Spinner positionFixed={false}></Spinner>
                     : <MainGridStyles>
                         {
-                            data?.map(({id, ...rest})  => {
-                                return <Movie key={id} {...rest} />
+                            data?.map(movie  => {
+                                return <Movie key={movie.id} {...movie} />
                             })
                         }
                     </MainGridStyles>
                 }
 
-            <Route path="/:id">
-                <MoviePage></MoviePage>
-            </Route>
+
         </MoviesStyles>
     );
 }

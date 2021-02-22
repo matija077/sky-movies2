@@ -26,7 +26,7 @@ const url = "http://localhost:3201/api/v1/movies";
 
 function Movie({ children }: MoviePropsType) {
     const [data, loading] = useFetch<Array<movieType>>(url);
-    console.log(loading);
+    console.log("moibeeeloading");
 
     return(
         <MovieStyles>
