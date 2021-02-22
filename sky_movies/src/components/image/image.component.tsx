@@ -10,7 +10,7 @@ export type ImagePropsType = {
     image1x: string,
     image2x?: string,
     image3x?: string,
-    alt?: string
+    alt?: string,
 } & ImageContainerStylesPropsType
 
 function Image({alt, image2x, image1x, image3x, ...rest}: ImagePropsType) {
