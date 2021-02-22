@@ -23,6 +23,7 @@ const FlexBoxStyles = styled.div<FlexBoxStylesPropsType>`
     color: ${props => props.theme.fonts.colors[props.color].main};
     padding: ${props => `${props.theme.spacing(props.padding)}rem`};
     max-width: ${props => props.maxWidth ? `${props.maxWidth}%` : "unset"};
+    overflow: hidden;
 
     & > :not(:first-child){
         margin-left: ${props => {

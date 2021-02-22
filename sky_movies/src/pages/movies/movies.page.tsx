@@ -39,6 +39,7 @@ function Movies({ children }: MoviesPropsType) {
                     display={"inline-flex"}
                     maxWidth={75}
                     elementsDistance={5}
+                    wrap={"wrap"}
                 >
                     {
                         categories.map((category, index) => {
@@ -63,7 +64,9 @@ function Movies({ children }: MoviesPropsType) {
                 padding={3}
                 color={"secondary"}
             >
-                <h5>All Movies</h5>
+                <Typography type={"h4"} fontSize={2.2} color={"secondary"}>
+                        All Movies
+                </Typography>
             </FlexBox>
                 {loading
                     ? <Spinner positionFixed={false}></Spinner>

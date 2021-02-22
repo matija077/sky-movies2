@@ -5,7 +5,8 @@ type MainGridStylesPropsType = {};
 const MoviesStyles = styled.main`
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 4vh 2vh 1fr;
+    grid-template-rows: 85px 60px 1fr;
+    overflow: hidden;
 `;
 
 const MainGridStyles = styled.article<MainGridStylesPropsType>`
