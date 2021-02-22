@@ -42,13 +42,13 @@ function MovieComponent({
                 type={"h4"}
                 color={"third"}
                 fontSize={1.8}
-            >name</Typography>
+                >{name}</Typography>
             <Typography
                 type={"h6"}
                 color={"secondary"}
                 opacity={0.7}
                 fontSize={1.4}
-            >genre</Typography>
+            >{genre}</Typography>
         </FlexBox>
     );
 }
