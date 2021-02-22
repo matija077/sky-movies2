@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from 'react-router-dom';
 
 import ErrorBoundary from './pages/error/error.page';
@@ -55,6 +56,7 @@ function App(props: AppPropsType) {
                   <Route path="/" exact>
                     <Movies></Movies>
                   </Route>
+                  <Redirect to="/"></Redirect>
                 </Switch>
               </Router>
             </div>

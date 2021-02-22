@@ -1,10 +1,17 @@
 import * as React from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Redirect
+  } from 'react-router-dom';
 
 import FlexBox from '../../components/flex_box/flex_box.component';
 import Button from '../../components/button/button.component';
 import Typography from '../../components/typography/typography.component';
 import Spinner from '../../components/spinner/spinner.component';
 import Movie from '../../components/movie/movie.component';
+import MoviePage from '../../pages/movie/movie.page';
 
 import { useFetch } from '../../utility/hooks/customHooks';
 import { movieType } from '../../utility/types/movies.types';
@@ -78,6 +85,10 @@ function Movies({ children }: MoviesPropsType) {
                         }
                     </MainGridStyles>
                 }
+
+            <Route path="/:id">
+                <MoviePage></MoviePage>
+            </Route>
         </MoviesStyles>
     );
 }
