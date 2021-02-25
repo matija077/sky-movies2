@@ -18,7 +18,11 @@ import Poster from '../../assets/Poster.jpg';
 import { useFetch } from '../../utility/hooks/customHooks';
 import { movieType } from '../../utility/types/movies.types';
 
-import { MovieStyles } from './movie.styles';
+import {
+    MovieStyles,
+    MovieContainerStyle,
+    SectionStyles
+} from './movie.styles';
 
 type MoviePropsType = {
     children?: React.ReactNode
@@ -32,12 +36,18 @@ function Movie({ children }: MoviePropsType) {
     const { id } = useParams<any>();
 
     const urlFull = `${url}/${id}`;
-    const [data, loading] = useFetch<movieType>(url);
+    const [data, loading] = useFetch<movieType>(urlFull);
+    console.log(data);
 
     const positioning = {
-        left: "10rem",
-        bottom: "10rem"
+        left: "4rem",
+        bottom: "6rem"
     }
+    const fullRating = `${data?.rating}/10`;
+    const lorelmIpusm = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at erat rhoncus,
+    viverra libero at, posuere augue. In sagittis erat orci,
+    nec porttitor tortor mattis eu. Praesent ut lacus in orci aliquam rhoncus in sed mauris.`;
+    console.log(typeof fullRating);
 
     return(
         <>
@@ -49,17 +59,52 @@ function Movie({ children }: MoviePropsType) {
                 :<Image
                     image1x={Background}
                     width={"100%"}
-                    height={"55%"}
+                    height={"35%"}
                 />
                 <MovieStyles>
-                    <Image
-                        image1x={Poster}
-                        width={"37rem"}
-                        height={"49rem"}
-                        position={"relative"}
-                        positioning={positioning}
-                        boxShadow={"1.4rem 0.7rem 2.4rem  #00000086"}
-                    />
+                    
+                    <MovieContainerStyle>
+                        <SectionStyles as="header">
+                                <Typography
+                                    type={"h6"}
+                                    fontSize={2.8}
+                                >
+                                    {data?.name ?? ""}
+                                </Typography>
+                                <Typography
+                                     type={"span"}
+                                     fontSize={2.1}
+                                >
+                                    {data?.genre ?? ""}
+                                </Typography>
+                        </SectionStyles>
+                        <SectionStyles>
+                                <Typography
+                                    type={"span"}
+                                    fontSize={1.6}
+                                >
+                                    Rating
+                                </Typography>
+                                <div>
+                                    <span>starts</span>
+                                    <Typography
+                                        type={"span"}
+                                        fontSize={1.6}
+                                    >
+                                        {fullRating}
+                                    </Typography>
+                                </div>
+                        </SectionStyles>
+                        <SectionStyles>
+                            <Typography
+                                    type={"span"}
+                                    fontSize={2}
+                                >
+                                    {lorelmIpusm}
+                                </Typography>
+                        </SectionStyles>
+                    </MovieContainerStyle>
+                    Buttons
                 </MovieStyles>
             </>
         }

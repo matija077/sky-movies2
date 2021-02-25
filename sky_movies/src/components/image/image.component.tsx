@@ -15,9 +15,10 @@ export type ImagePropsType = {
 
 function Image({alt, image2x, image1x, image3x, ...rest}: ImagePropsType) {
     // probably faster without, but to many ifs.
+    // we dotn care about imagexx chanegs not persisting through renders.
+    // only retur nvalue matters
     const srcSet = useMemo(() => {
         if (image2x || image3x) {
-            console.log(image2x);
             if (!image2x) {
                 image2x = "";
             } else {
@@ -29,9 +30,6 @@ function Image({alt, image2x, image1x, image3x, ...rest}: ImagePropsType) {
                 image3x = ` ${image3x} 3x`;
             }
             image1x =  `${image1x} 1x,`;
-
-            console.log(image2x);
-            console.log(image3x);
 
             return image1x + image2x + image3x;
         }

@@ -6,10 +6,10 @@ const Aside = styled.aside`
     };
     display: flex;
     flex-direction: column;
-    margin: auto;
+    margin: 0 auto;
     width: 100%;
     min-width: 312px;
-    height: 100%;
+    height: 100vh;
     min-height: 100vh;
     font-size: 2.2rem;
 `;

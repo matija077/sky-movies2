@@ -26,6 +26,7 @@ async function getMovie(id) {
             .from("movies")
             .select("*")
             .where({id: +id});
+        returnValue.data = result && result[0];
 
         if (!result || result.length === 0) {
             returnValue.notFound = true;

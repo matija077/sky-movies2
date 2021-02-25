@@ -10,7 +10,7 @@ const MenuPage = styled.div`
     letter-spacing: 0px;
     background: url(${backgroundImage});
     background-repeat: no-repeat;
-    background-position: bottom -28rem right -5rem;
+   
 `;
 
 export {
